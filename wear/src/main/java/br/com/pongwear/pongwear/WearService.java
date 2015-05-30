@@ -37,13 +37,13 @@ public class WearService extends WearableListenerService{
 
         for(DataEvent event : dataEvents){
             if(event.getDataItem().getUri().getPath().equals("/new-game-pong")){
-                Notification.Builder builder = new Notification.Builder(this).setSmallIcon(R.drawable.ic_full_cancel).setContentTitle("Air Pong").setContentText("Novo jogo começado!");
+                Notification.Builder builder = new Notification.Builder(this).setSmallIcon(R.mipmap.ic_aaa).setContentTitle("Air Pong").setContentText("New game begining!");
 
 
                 PendingIntent pendingIntent;
                 Intent intent = new Intent(this, MainActivity.class);
                 pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-                builder.addAction(R.drawable.common_signin_btn_icon_focus_light, "Iniciar jogo", pendingIntent);
+                builder.addAction(R.mipmap.ic_aaa, "Start Game", pendingIntent);
                 ((NotificationManager) getSystemService(NOTIFICATION_SERVICE)).notify(0, builder.build());
             }
         }
