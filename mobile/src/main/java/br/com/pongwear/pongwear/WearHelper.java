@@ -39,7 +39,6 @@ public class WearHelper implements GoogleApiClient.ConnectionCallbacks, DataApi.
                     }
                 });
     }
-    CONFLITO (modificar/delete): build/intermediates/gradle_project_sync_data.bin excluído em 6da3c523c0b8a55925b10f8a7ed7196a9ba8b2e2 e modificado em HEAD. Versão HEAD de build/intermediates/gradle_project_sync_data.bin deixada na árvore.
 
 
     @Override
