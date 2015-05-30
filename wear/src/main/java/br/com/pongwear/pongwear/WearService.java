@@ -1,5 +1,6 @@
 package br.com.pongwear.pongwear;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -37,9 +38,12 @@ public class WearService extends WearableListenerService{
         for(DataEvent event : dataEvents){
             if(event.getDataItem().getUri().getPath().equals("/new-game-pong")){
                 Notification.Builder builder = new Notification.Builder(this).setSmallIcon(R.drawable.ic_full_cancel).setContentTitle("Air Pong").setContentText("Novo jogo começado!");
-//                Intent varIntent = new Intent(this, MainActivity.class);
-//                PendingIntent pendingIntent = new PendingIntent()
-//                builder.addAction(R.drawable.ic_full_cancel, "Iniciar jogo", varIntent);
+
+
+                PendingIntent pendingIntent;
+                Intent intent = new Intent(this, MainActivity.class);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+                builder.addAction(R.drawable.common_signin_btn_icon_focus_light, "Iniciar jogo", pendingIntent);
                 ((NotificationManager) getSystemService(NOTIFICATION_SERVICE)).notify(0, builder.build());
             }
         }
